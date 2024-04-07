@@ -1,0 +1,13 @@
+services:
+  backend:
+    build: ./
+    command: python3 ./app/main.py
+  database:
+    container_name: invest-app-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=investapp_admin
+      - POSTGRES_PASSWORD=investapp_admin
+    image: postgres:16-alpine
