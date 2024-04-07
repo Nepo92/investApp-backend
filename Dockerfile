@@ -4,6 +4,13 @@ WORKDIR /root/backend/
 
 COPY . .
 
-RUN apk add git
+RUN apk update \ 
+    && apk add postgresql-dev \
+    && apk add gcc \
+    && apk add python3-dev \
+    && apk add musl-dev \
+    && apk add git
+
+RUN pip install psycopg2-binary
 
 CMD git pull
