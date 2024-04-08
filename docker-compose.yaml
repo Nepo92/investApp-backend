@@ -1,7 +1,7 @@
 services:
   backend:
     build: ./
-    command: python3 ./app/main.py
+    command: python3 -u ./app/main.py
   database:
     container_name: invest-app-db
     ports:

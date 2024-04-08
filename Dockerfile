@@ -1,8 +1,6 @@
-FROM python:3.13-rc-alpine
+FROM python:3.12-rc-alpine
 
 WORKDIR /root/backend/
-
-COPY . .
 
 RUN apk update \ 
     && apk add postgresql-dev \
@@ -10,6 +8,8 @@ RUN apk update \
     && apk add python3-dev \
     && apk add musl-dev \
     && apk add git
+
+COPY . .
 
 RUN pip install psycopg2-binary
 
