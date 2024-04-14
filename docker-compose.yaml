@@ -2,8 +2,9 @@ services:
   backend:
     build: ./
     command: python3 -u ./app/main.py
+    ports:
+      - "4000:80"
   database:
-    container_name: invest-app-db
     ports:
       - "5432:5432"
     environment:
