@@ -25,7 +25,7 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
 
                 result = user.user_schema.execute(data['query'])
 
-                json_string = json.dumps(result.data)
+                json_string = json.dumps({'data': result.data})
                 print(json_string)
 
                 data = bytes(json_string, encoding='utf-8')
