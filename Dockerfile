@@ -12,8 +12,8 @@ RUN apk update \
     && apk add sudo \
     && apk add git
 
-COPY . .
-
 RUN pip install psycopg2-binary && pip install graphene && pip install python-dotenv
+    
+COPY . .
 
 CMD git pull
